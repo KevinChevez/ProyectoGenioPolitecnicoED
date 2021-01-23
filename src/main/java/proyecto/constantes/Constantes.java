@@ -13,8 +13,8 @@ package proyecto.constantes;
 public class Constantes {
     public static final String PATH_DATOS = 
             "src\\main\\resources\\recursos\\datos.txt";
-    public static final String PATH_VIEW_INICIO =
-            "../vista/InicioVista";
-    public static final String PATH_VIEW_JUEGO =
-            "../vista/JuegoVista";
+    public static final String PATH_VIEW_INICIO ="/vista/InicioVista";
+    public static final String PATH_VIEW_JUEGO ="/vista/JuegoVista";
+    public static final String PATH_VIEW_WIN = "/vista/WinVista";
+    public static final String PATH_VIEW_LOSE = "/vista/LoseVista";
 }

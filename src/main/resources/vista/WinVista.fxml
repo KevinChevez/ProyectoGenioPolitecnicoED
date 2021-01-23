@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane prefHeight="564.0" prefWidth="750.0" styleClass="main-bg" stylesheets="@../css/estilos.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="proyecto.controlador.WinControlador">
+   <center>
+      <VBox alignment="CENTER" spacing="10.0">
+         <children>
+            <ImageView fitHeight="327.0" fitWidth="379.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../recursos/patricioWinGIF.gif" />
+               </image></ImageView>
+            <Label alignment="CENTER" prefHeight="138.0" prefWidth="600.0" styleClass="inner-bg" text="Yo gano (;" textAlignment="CENTER" textFill="#ffeb9d" wrapText="true">
+               <font>
+                  <Font name="Elephant" size="36.0" />
+               </font>
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+            </Label>
+         </children>
+         <padding>
+            <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+         </padding>
+      </VBox>
+   </center>
+   <right>
+      <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" styleClass="inner-bg" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fitHeight="345.0" fitWidth="315.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../recursos/homerWin.png" />
+               </image>
+            </ImageView>
+         </children>
+      </VBox>
+   </right>
+   <bottom>
+      <HBox alignment="CENTER" spacing="10.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="btnVolverAJugar" mnemonicParsing="false" onAction="#switchToPlay" prefHeight="42.0" text="Volver a Jugar">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#exit" prefHeight="38.0" prefWidth="130.0" text="Salir">
+               <font>
+                  <Font size="17.0" />
+               </font>
+               <padding>
+                  <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+               </padding>
+            </Button>
+         </children>
+         <opaqueInsets>
+            <Insets bottom="8.0" left="6.0" right="6.0" top="8.0" />
+         </opaqueInsets>
+         <padding>
+            <Insets bottom="8.0" left="6.0" right="6.0" top="8.0" />
+         </padding>
+      </HBox>
+   </bottom>
+   <padding>
+      <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+   </padding>
+</BorderPane>

@@ -10,20 +10,20 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="proyecto.controlador.InicioControlador">
+<BorderPane prefHeight="564.0" prefWidth="750.0" styleClass="main-bg" stylesheets="@../css/estilos.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="proyecto.controlador.InicioControlador">
    <center>
       <AnchorPane id="AnchorPane" styleClass="mainFxmlClass">
          <children>
-            <ImageView fx:id="viewFiecImg" fitHeight="200.0" fitWidth="200.0" layoutX="100.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="viewFiecImg" fitHeight="246.0" fitWidth="254.0" layoutX="107.0" layoutY="45.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../recursos/fiecImg.png" />
                </image></ImageView>
-            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="110.0" layoutY="241.0" text="Usted deberá pensar en un animal y yo trataré de adivinarlo.">
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="58.0" layoutY="336.0" styleClass="inner-bg" text="Usted deberá pensar en un animal y yo trataré de adivinarlo." textFill="#ffeb9d">
                <font>
-                  <Font name="Berlin Sans FB" size="15.0" />
+                  <Font name="Berlin Sans FB" size="25.0" />
                </font>
             </Label>
-            <ImageView fx:id="viewLogoImg" fitHeight="200.0" fitWidth="200.0" layoutX="300.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="viewLogoImg" fitHeight="247.0" fitWidth="238.0" layoutX="400.0" layoutY="45.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../recursos/espolOldImg.png" />
                </image>
@@ -32,14 +32,17 @@
       </AnchorPane>
    </center>
    <bottom>
-      <VBox alignment="CENTER" spacing="10.0" BorderPane.alignment="CENTER">
+      <VBox alignment="CENTER" spacing="10.0" styleClass="inner-bg" BorderPane.alignment="CENTER">
          <children>
-            <Label alignment="CENTER" contentDisplay="CENTER" text="Empecemos!!">
+            <Label alignment="CENTER" contentDisplay="CENTER" text="Empecemos!!" textFill="#ffeb9d">
                <font>
-                  <Font name="Britannic Bold" size="20.0" />
+                  <Font name="Britannic Bold" size="27.0" />
                </font>
             </Label>
-            <Button fx:id="btnContinuar" mnemonicParsing="false" onAction="#switchToJuego" text="Continuar" />
+            <Button fx:id="btnContinuar" mnemonicParsing="false" onAction="#switchToJuego" text="Continuar">
+               <font>
+                  <Font size="17.0" />
+               </font></Button>
          </children>
          <padding>
             <Insets bottom="8.0" left="6.0" right="6.0" top="8.0" />
@@ -47,11 +50,11 @@
       </VBox>
    </bottom>
    <top>
-      <VBox alignment="CENTER" spacing="15.0" BorderPane.alignment="CENTER">
+      <VBox alignment="CENTER" spacing="15.0" styleClass="inner-bg" BorderPane.alignment="CENTER">
          <children>
-            <Label alignment="CENTER" contentDisplay="CENTER" text="Bienvenido a Genio Politécnico" textAlignment="CENTER">
+            <Label alignment="CENTER" contentDisplay="CENTER" text="Bienvenido a Genio Politécnico" textAlignment="CENTER" textFill="#ffeb9d">
                <font>
-                  <Font name="Britannic Bold" size="20.0" />
+                  <Font name="Britannic Bold" size="36.0" />
                </font>
             </Label>
          </children>

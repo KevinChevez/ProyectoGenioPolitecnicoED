@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane prefHeight="564.0" prefWidth="750.0" styleClass="main-bg" stylesheets="@../css/estilos.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="proyecto.controlador.LoseControlador">
+   <center>
+      <VBox alignment="CENTER" spacing="15.0">
+         <children>
+            <Label text="No pude adivinar el animal que pensaste, ayúdame a mejorar mi presición, ¿En qué animal estabas pensando?" textFill="#ffeb9d" wrapText="true">
+               <font>
+                  <Font name="Elephant" size="23.0" />
+               </font>
+            </Label>
+            <TextField fx:id="animalField" focusTraversable="false" onAction="#animalAccion" promptText="Ingrese el animal que estaba pensando">
+               <font>
+                  <Font size="20.0" />
+               </font>
+               <styleClass>
+                  <String fx:value="inner-bg" />
+                  <String fx:value="text-field" />
+               </styleClass>
+            </TextField>
+            <Label fx:id="preguntaText" text="Texto dinámico Escribe una pregunta" textFill="#ffeb9d" visible="false" wrapText="true">
+               <font>
+                  <Font name="Elephant" size="23.0" />
+               </font>
+            </Label>
+            <TextField fx:id="preguntaField" onAction="#preguntaAccion" promptText="Ingrese la pregunta" visible="false">
+               <font>
+                  <Font size="20.0" />
+               </font>
+               <styleClass>
+                  <String fx:value="inner-bg" />
+                  <String fx:value="text-field" />
+               </styleClass>
+            </TextField>
+            <Label fx:id="respuestaText" text="La respuesta a la pregunta es" textFill="#ffeb9d" visible="false" wrapText="true">
+               <font>
+                  <Font name="Elephant" size="23.0" />
+               </font>
+            </Label>
+            <TextField fx:id="respuestaField" onAction="#respuestaAccion" promptText="Ingrese la respuesta" visible="false">
+               <font>
+                  <Font size="20.0" />
+               </font>
+               <styleClass>
+                  <String fx:value="inner-bg" />
+                  <String fx:value="text-field" />
+               </styleClass>
+            </TextField>
+            <Label fx:id="mensajeFinalText" text="Gracias! he aprendido algo nuevo." textFill="#ffeb9d" visible="false" wrapText="true">
+               <font>
+                  <Font name="Elephant" size="23.0" />
+               </font>
+            </Label>
+         </children>
+         <padding>
+            <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+         </padding>
+      </VBox>
+   </center>
+   <right>
+      <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="10.0" styleClass="inner-bg" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fitHeight="327.0" fitWidth="215.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../recursos/homerLose.png" />
+               </image>
+            </ImageView>
+         </children>
+         <padding>
+            <Insets bottom="8.0" left="6.0" right="6.0" top="8.0" />
+         </padding>
+      </VBox>
+   </right>
+   <bottom>
+      <HBox alignment="CENTER" spacing="10.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="btnVolverAJugar" mnemonicParsing="false" onAction="#switchToPlay" text="Volver a Jugar">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#exit" prefWidth="120.0" text="Salir">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Button>
+         </children>
+         <padding>
+            <Insets bottom="8.0" left="6.0" right="6.0" top="8.0" />
+         </padding>
+      </HBox>
+   </bottom>
+   <padding>
+      <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+   </padding>
+</BorderPane>

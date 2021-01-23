@@ -1,5 +1,14 @@
 
-.button {
+.main-bg{
+    -fx-background-image: url("../recursos/BackgroundDesert.jpg");
+}
+
+.inner-bg{
+    -fx-background-color: rgba(33, 33, 33, 0.5);
+    -fx-background-radius: 10;
+}
+
+/*.button {
     -fx-text-fill: black;
     -fx-font-family: "Arial ";
     -fx-background-color: linear-gradient(#3498DB, #2ECC71);
@@ -11,23 +20,23 @@
     -fx-font-size: 12px;
     -fx-padding: 10 15 10 15;
     -fx-font-family: "Arial";
-   
-
 }
 
-.text{
-   -fx-font-size: 12px;
+*/.text-field{
+   -fx-font-size: 13px;
    -fx-font-family: "Arial Black";
-   /*-fx-fill: #818181;*/
-   -fx-effect: innershadow( three-pass-box , rgba(0,0,0,0.7) , 6, 0.0 , 0 , 2 );
-   -fx-text-fill: #dc7633;
-}
+   -fx-fill: #ffeb9d;
+   -fx-text-fill: #ffeb9d;
+}/*
+
 .table{
    -fx-font-size: 12px;
    -fx-font-family: "Arial Black";
-   /*-fx-fill: #818181;*/
+   -fx-fill: #818181;
    -fx-effect: innershadow( three-pass-box , rgba(0,0,0,0.7) , 6, 0.0 , 0 , 2 );
    -fx-text-fill: #dc7633; 
 }
+
+label-header{}*/
 
 

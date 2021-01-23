@@ -6,13 +6,19 @@
 
 package proyecto.controlador;
 
+import java.io.File;
 import java.io.IOException;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Scanner;
 import javafx.application.Application;
 import static javafx.application.Application.launch;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import proyecto.constantes.Constantes;
+import proyecto.modelo.BinaryTree;
 
 /**
  * 
@@ -20,6 +26,7 @@ import javafx.stage.Stage;
  */
 public class Aplicacion extends Application {
     private static Scene scene;
+    public static BinaryTree<String> arbolPreguntas = crearArbolGenio();
     
     @Override
     public void start(Stage primaryStage){
@@ -45,5 +52,11 @@ public class Aplicacion extends Application {
 
     public static void main(String[] args) {
         launch();
+    }
+    
+    private static BinaryTree<String> crearArbolGenio(){
+        BinaryTree<String> arbol = new BinaryTree<>();
+        arbol.construirArbolGenio(Constantes.PATH_DATOS);
+        return arbol;
     }
 }
