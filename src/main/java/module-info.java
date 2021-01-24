@@ -10,8 +10,4 @@ module ProyectoGenioPolitecnico {
     
     opens proyecto.controlador to javafx.fxml, javafx.base,javafx.controls,javafx.graphics,javafx.swing,javafx.web,javafx.media,java.base;
     exports proyecto.controlador;
-    
-
-    
-    
 }

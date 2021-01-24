@@ -16,9 +16,10 @@ import proyecto.controlador.Aplicacion;
 
 
 /**
- * 
- * @author KevinChevez
- * @param <E>
+ * @author KevinChevez, MargaritaMawyin, RafaelMerchán
+ * @param <E> Recibe como parámetro cualquier tipo de varible, es por ese motivo
+ * que la clase está paremetrizada, únicamente para que el arbol sea construido
+ * con cualquier tipo de variable.
  */
 public class BinaryTree<E> {
     private Nodo<E> root;

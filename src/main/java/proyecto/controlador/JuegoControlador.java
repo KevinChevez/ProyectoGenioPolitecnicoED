@@ -40,8 +40,8 @@ public class JuegoControlador implements Initializable {
 
     /**
      * Initializes the controller class.
-     * @param url
-     * @param rb
+     * @param url Recibe una url implícita de FXML para construir la clase.
+     * @param rb Recibe un ResourseBundle de parte de FXML.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
