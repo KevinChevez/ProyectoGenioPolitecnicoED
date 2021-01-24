@@ -86,7 +86,7 @@
    <bottom>
       <HBox alignment="CENTER" spacing="10.0" BorderPane.alignment="CENTER">
          <children>
-            <Button fx:id="btnVolverAJugar" mnemonicParsing="false" onAction="#switchToPlay" text="Volver a Jugar">
+            <Button fx:id="btnVolverAJugar" disable="true" mnemonicParsing="false" onAction="#switchToPlay" text="Volver a Jugar">
                <font>
                   <Font size="17.0" />
                </font>

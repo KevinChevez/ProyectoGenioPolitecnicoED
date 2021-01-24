@@ -14,7 +14,7 @@
    <center>
       <AnchorPane id="AnchorPane" styleClass="mainFxmlClass">
          <children>
-            <ImageView fx:id="viewFiecImg" fitHeight="246.0" fitWidth="254.0" layoutX="107.0" layoutY="45.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView  fitHeight="246.0" fitWidth="254.0" layoutX="107.0" layoutY="45.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../recursos/fiecImg.png" />
                </image></ImageView>
@@ -23,7 +23,7 @@
                   <Font name="Berlin Sans FB" size="25.0" />
                </font>
             </Label>
-            <ImageView fx:id="viewLogoImg" fitHeight="247.0" fitWidth="238.0" layoutX="400.0" layoutY="45.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView  fitHeight="247.0" fitWidth="238.0" layoutX="400.0" layoutY="45.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../recursos/espolOldImg.png" />
                </image>
@@ -39,7 +39,7 @@
                   <Font name="Britannic Bold" size="27.0" />
                </font>
             </Label>
-            <Button fx:id="btnContinuar" mnemonicParsing="false" onAction="#switchToJuego" text="Continuar">
+            <Button  mnemonicParsing="false" onAction="#switchToJuego" text="Continuar">
                <font>
                   <Font size="17.0" />
                </font></Button>

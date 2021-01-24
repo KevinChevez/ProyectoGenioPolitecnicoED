@@ -12,17 +12,17 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane onMouseClicked="#clickPane" prefHeight="564.0" prefWidth="750.0" styleClass="main-bg" stylesheets="@../css/estilos.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="proyecto.controlador.JuegoControlador">
+<BorderPane prefHeight="564.0" prefWidth="750.0" styleClass="main-bg" stylesheets="@../css/estilos.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="proyecto.controlador.JuegoControlador">
    <bottom>
       <VBox alignment="CENTER" prefHeight="46.0" prefWidth="750.0" BorderPane.alignment="CENTER">
          <children>
             <HBox alignment="CENTER" prefHeight="38.0" prefWidth="745.0" spacing="10.0">
                <children>
-                  <Button fx:id="btnInicio" mnemonicParsing="false" onAction="#switchToInicio" prefHeight="38.0" prefWidth="90.0" text="Regresar">
+                  <Button  mnemonicParsing="false" onAction="#switchToInicio" prefHeight="38.0" prefWidth="90.0" text="Regresar">
                      <font>
                         <Font size="17.0" />
                      </font></Button>
-                  <Button fx:id="btnSalir" mnemonicParsing="false" onAction="#salir" prefHeight="38.0" prefWidth="90.0" text="Salir">
+                  <Button  mnemonicParsing="false" onAction="#salir" prefHeight="38.0" prefWidth="90.0" text="Salir">
                      <font>
                         <Font size="17.0" />
                      </font></Button>
@@ -35,9 +35,9 @@
       </VBox>
    </bottom>
    <left>
-      <VBox fx:id="contenedorImagen" alignment="CENTER" prefHeight="350.0" prefWidth="259.0" styleClass="inner-bg" BorderPane.alignment="CENTER">
+      <VBox  alignment="CENTER" prefHeight="350.0" prefWidth="259.0" styleClass="inner-bg" BorderPane.alignment="CENTER">
          <children>
-            <ImageView fx:id="imagenJuego" cache="true" fitHeight="280.0" fitWidth="206.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView  cache="true" fitHeight="280.0" fitWidth="206.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../recursos/homerThinking.png" />
                </image>

@@ -12,8 +12,6 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
-import static proyecto.constantes.Constantes.*;
 import static proyecto.controlador.Aplicacion.arbolPreguntas;
 
 /**
@@ -23,11 +21,11 @@ import static proyecto.controlador.Aplicacion.arbolPreguntas;
  */
 public class WinControlador implements Initializable {
 
-    @FXML
-    private Button btnVolverAJugar;
 
     /**
      * Initializes the controller class.
+     * @param url
+     * @param rb
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -37,7 +35,7 @@ public class WinControlador implements Initializable {
     @FXML
     private void switchToPlay(ActionEvent event) throws IOException{
         arbolPreguntas.reiniciarNodoActual();
-        Aplicacion.setRoot(PATH_VIEW_JUEGO);
+        Aplicacion.setRoot(Aplicacion.PATH_VIEW_JUEGO);
     }
 
     @FXML

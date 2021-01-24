@@ -11,9 +11,6 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
 
 /**
  * FXML Controller class
@@ -22,16 +19,11 @@ import javafx.scene.image.ImageView;
  */
 public class InicioControlador implements Initializable {
 
-    @FXML
-    private Button btnContinuar;
-    private ImageView imagenBienvenida;
-    @FXML
-    private ImageView viewFiecImg;
-    @FXML
-    private ImageView viewLogoImg;
 
     /**
      * Initializes the controller class.
+     * @param url
+     * @param rb
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {

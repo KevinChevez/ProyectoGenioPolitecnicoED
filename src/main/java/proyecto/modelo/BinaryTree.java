@@ -3,25 +3,21 @@ package proyecto.modelo;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileOutputStream;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
-import java.util.HashMap;
-import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.List;
 import java.util.Objects;
 import java.util.Scanner;
-import proyecto.constantes.Constantes;
-import static proyecto.constantes.Constantes.PATH_DATOS;
-import proyecto.modelo.Nodo;
+import proyecto.controlador.Aplicacion;
+
 
 /**
  * 
  * @author KevinChevez
+ * @param <E>
  */
 public class BinaryTree<E> {
     private Nodo<E> root;
@@ -259,7 +255,7 @@ public class BinaryTree<E> {
         if(n == null){
             return true;
         }
-        if((n.getLeft() == null && n.getRight() ==null) || (n.getLeft() == null && n.getRight() == null)){
+        if((n.getLeft() == null && n.getRight() ==null)){
             return false;
         }
         return isFull(n.getLeft()) && isFull(n.getRight()) && height(n.getLeft())== height(n.getRight());
@@ -267,10 +263,10 @@ public class BinaryTree<E> {
     
     public String decision(List<String> respuestas){     
         Iterator<String> it = respuestas.iterator();
-        return (respuestas!=null)? decision(it, (Nodo<String>)root) : "No hay Lista";
+        return  decision(it, (Nodo<String>)root);
     }
     private String decision(Iterator<String> it, Nodo<String> parent){
-        boolean tiene=it.hasNext();
+//        boolean tiene=it.hasNext();
         String valor = (it.hasNext())? it.next() : null;
         boolean va=valor!=null;
         boolean derecha = (valor!=null)? (valor.toLowerCase().equals("yes")) : false;
@@ -289,9 +285,9 @@ public class BinaryTree<E> {
     }
     
     public boolean addMorse(E child, List<String> direcciones){
-        this.root = (this.root == null)? (Nodo<E>)(new Nodo<String>("INICIO")) : this.root;
+        this.root = (this.root == null)? (Nodo<E>)(new Nodo<>("INICIO")) : this.root;
         Iterator<String> it = direcciones.iterator();
-        if(child!=null && direcciones!=null){
+        if(child!=null){// && direcciones!=null
             addMorse(child, it, root);
             return true;
         }
@@ -353,90 +349,7 @@ public class BinaryTree<E> {
         return resp.toString();
     }
     
-    public List<E> equiposDerrotadosFases (String fase, HashMap<String, Integer> fases){
-        Integer lvlArb = fases.get(fase);
-        return (lvlArb!=null)? equiposDerrotadosFases(root, lvlArb, 0) : null;
-    }
-    private List<E> equiposDerrotadosFases (Nodo<E> parent, Integer lvlArb, Integer lvlAct){
-        List<E> resp = new ArrayList<>();
-        if(parent!=null){
-            lvlAct+=1;
-            if(lvlArb < lvlAct) resp.add(parent.getRight().getData());
-            if(!parent.getLeft().isHoja()){
-                resp.addAll(equiposDerrotadosFases(parent.getLeft(), lvlArb, lvlAct));
-            }
-            if(!parent.getRight().isHoja()){
-                resp.addAll(equiposDerrotadosFases(parent.getRight(), lvlArb, lvlAct));
-            }
-        }
-        return resp;
-    }
-    
-    public List<E> equiposEliminados(E seleccion){
-        return equiposEliminados(seleccion, root);
-    }
-    private List<E> equiposEliminados(E seleccion, Nodo<E> parent){
-        List<E> resp = new ArrayList<>();
-        if((seleccion!=null && parent!=null) && !parent.isHoja()){ 
-            if( parent.getData().equals(seleccion)){
-                resp.add(parent.getRight().getData());
-                resp.addAll(equiposEliminados(seleccion, parent.getLeft()));
-            }
-            else{ // ayudo a evitar la búsqueda a ciegas
-                if(parent.getLeft().getData().equals(seleccion)){
-                    resp.addAll(equiposEliminados(seleccion, parent.getRight()));
-                }
-                else if(parent.getLeft().getData().equals(seleccion)){
-                    resp.addAll(equiposEliminados(seleccion, parent.getLeft()));
-                }
-                else{
-                    resp.addAll(equiposEliminados(seleccion, parent.getLeft()));
-                    resp.addAll(equiposEliminados(seleccion, parent.getRight()));
-                }
-            }
-        }
-        return resp;
-    }
-    
-    public boolean isBST(){
-        Comparator<E> comparador = (E o1, E o2) -> o1.hashCode()-o2.hashCode();
-        return isBST(root, comparador);
-    }
-    private boolean isBST(Nodo<E> parent, Comparator<E> comparador){
-        if(parent==null){
-            return true;
-        }
-        if(parent.isComplete()){
-            return (comparador.compare(parent.getData(), parent.getLeft().getData())>0 
-                    && comparador.compare(parent.getData(), parent.getRight().getData())<0 
-                    && isBST(parent.getLeft(), comparador)
-                    && isBST(parent.getRight(), comparador));
-        }
-        else if(!parent.isHoja()){
-                return (parent.getLeft()!=null)? 
-                        (comparador.compare(parent.getData(), parent.getLeft().getData())>0 && isBST(parent.getLeft(), comparador))
-                        :(comparador.compare(parent.getData(), parent.getRight().getData())<0 && isBST(parent.getRight(), comparador));
-        }
-        else{// si es hoja
-            return true;
-        } 
-    }
-    
-    public void crearArbolHeap(int inicio, int n){
-        root = (Nodo<E>)crearArbolHeap(inicio, n, root);
-    }
-    private Nodo<E> crearArbolHeap(int inicio, int n, Nodo<E> parent) {
-        if(n>0){
-            Nodo<Integer> raiz = new Nodo<>(inicio);
-            if(parent == null){
-                parent = (Nodo<E>)raiz;
-            }
-            parent.setLeft(crearArbolHeap((inicio*2)+1, n-1, parent.getLeft()));
-            parent.setRight(crearArbolHeap((inicio*2)+2, n-1, parent.getRight()));
-        }
-        return parent;
-    }
-
+   
     @Override
     public int hashCode() {
         int hash = 7;
@@ -488,7 +401,7 @@ public class BinaryTree<E> {
      * el repositorio local
      */
     public void construirArbolGenio(String path){
-        try(Scanner sc = new Scanner(new File(path))){
+        try(Scanner sc = new Scanner(new File(path),"UTF-8")){
             String line = sc.nextLine();
             String[] valores = line.split(" ");
             String mensaje = construirMensaje(valores, 1);  
@@ -561,7 +474,7 @@ public class BinaryTree<E> {
     public E iterarIzquierda(){
         if(this.nodoActual!=null){
             this.nodoActual = this.nodoActual.getLeft();
-            return (this.nodoActual!=null)? this.nodoActual.getData() : null;
+            return (this.nodoActual!=null)? this.nodoActual.getData() : null; //
         }
         return null;
     }
@@ -656,7 +569,7 @@ public class BinaryTree<E> {
      * archivo txt.
      */
     public void guardarTxtArbolPreOrden(){
-        try(BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(PATH_DATOS),"UTF-8"))){            
+        try(BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(Aplicacion.PATH_DATOS),"UTF-8"))){            
             guardarTxtArbolPreOrden(root, writer);
         }
         catch(IOException e){

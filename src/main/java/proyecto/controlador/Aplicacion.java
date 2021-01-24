@@ -6,18 +6,14 @@
 
 package proyecto.controlador;
 
-import java.io.File;
+
 import java.io.IOException;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Scanner;
 import javafx.application.Application;
 import static javafx.application.Application.launch;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import proyecto.constantes.Constantes;
 import proyecto.modelo.BinaryTree;
 
 /**
@@ -25,8 +21,14 @@ import proyecto.modelo.BinaryTree;
  * @author KevinChevez
  */
 public class Aplicacion extends Application {
+    public static final String PATH_DATOS = "src/main/resources/archivos/datos.txt";
+    public static final String PATH_VIEW_INICIO ="/vista/InicioVista";
+    public static final String PATH_VIEW_JUEGO ="/vista/JuegoVista";
+    public static final String PATH_VIEW_WIN = "/vista/WinVista";
+    public static final String PATH_VIEW_LOSE = "/vista/LoseVista";
+    
     private static Scene scene;
-    public static BinaryTree<String> arbolPreguntas = crearArbolGenio();
+    public static final BinaryTree<String> arbolPreguntas = crearArbolGenio(); 
     
     @Override
     public void start(Stage primaryStage){
@@ -34,9 +36,11 @@ public class Aplicacion extends Application {
             scene = new Scene(loadFXML("/vista/InicioVista"));
             primaryStage.setScene(scene);
             primaryStage.show();     
-        }catch(Exception e){
-            System.out.println("Hubo un problema "+e.getMessage());
-            System.exit(0);
+        }catch(IOException e){
+            e.getLocalizedMessage();
+//            
+//            System.out.println("Hubo un problema "+e.getMessage());
+//            System.exit(0);
         }
     }
 
@@ -56,7 +60,7 @@ public class Aplicacion extends Application {
     
     private static BinaryTree<String> crearArbolGenio(){
         BinaryTree<String> arbol = new BinaryTree<>();
-        arbol.construirArbolGenio(Constantes.PATH_DATOS);
+        arbol.construirArbolGenio(PATH_DATOS);
         return arbol;
     }
 }

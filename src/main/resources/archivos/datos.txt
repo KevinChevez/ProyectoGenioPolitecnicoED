@@ -5,15 +5,19 @@
 #R Un perro 
 #P Es un animal de granja? 
 #R Una oveja 
-#P es carnívoro?
-#R Un león
+#P Es carní­voro? 
+#R Un león 
 #R Un elefante 
 #P Es un ave? 
 #P Puede volar? 
 #R Una paloma 
-#P tiene el cuello largo?
-#R Un ñandú
+#P Tiene el cuello largo? 
+#R Un ñandú 
 #R Un pinguino 
 #P Vive en el oceano? 
+#P tiene morro?
+#R Un delfín
 #R Un calamar 
+#P Es grande 
+#R Una tarantula 
 #R Una araña 
