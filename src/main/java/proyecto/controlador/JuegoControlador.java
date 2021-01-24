@@ -32,9 +32,9 @@ public class JuegoControlador implements Initializable {
     @FXML
     private Label mesajeRespWrong;
     
-    private  Nodo<String> nodoActual ;
+    private  static Nodo<String> nodoActual ;
 
-    public  Nodo<String> getNodoActual() {
+    public  Nodo< String> getNodoActual() {
         return nodoActual;
     }
 

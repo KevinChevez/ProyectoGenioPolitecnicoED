@@ -11,6 +11,7 @@ import java.util.Queue;
 import java.util.List;
 import java.util.Objects;
 import java.util.Scanner;
+import javafx.scene.Node;
 import proyecto.controlador.Aplicacion;
 
 
@@ -43,7 +44,7 @@ public class BinaryTree<E> {
             root = nchild;
             return true;
         }
-        //add(B,A)
+        
         Nodo<E> nParent = searchNode(parent);
         Nodo<E> nChildExist = searchNode(child);
         if(nChildExist == null && nParent != null){
@@ -180,38 +181,7 @@ public class BinaryTree<E> {
         System.out.println("");
     }
     
-    public void preOrden(){
-        preOrden(root);
-    }
-    private void preOrden(Nodo<E> parent){
-        if(parent!=null){
-            System.out.print(parent.getData()+" ");
-            preOrden(parent.getLeft());
-            preOrden(parent.getRight());
-        }
-    }
-    
-    public void inOrden(){
-        inOrden(root);
-    }
-    private void inOrden(Nodo<E> parent){
-        if(parent!=null){
-            inOrden(parent.getLeft());
-            System.out.print(parent.getData()+" ");
-            inOrden(parent.getRight());
-        }
-    }
-    
-    public void postOrden(){
-        postOrden(root);
-    }
-    private void postOrden(Nodo<E> parent){
-        if(parent!=null){
-            postOrden(parent.getLeft());
-            postOrden(parent.getRight());
-            System.out.print(parent.getData()+" ");
-        }
-    }
+   
     
     public int size(){
         return size(root);
@@ -222,31 +192,8 @@ public class BinaryTree<E> {
         }
         return 1+size(n.getLeft())+size(n.getRight());
     }
+
     
-    public int height(){
-        return height(root);
-    }
-    private int height(Nodo<E> n){
-        if(n == null){
-            return 0;
-        }
-        return 1 + Math.max(height(n.getLeft()), height(n.getRight()));
-    }
-    
-    public int countLeaves(){
-        return countLeaves(root);
-    }
-    private int countLeaves(Nodo<E> n){
-        if(n == null){
-            return 0;
-        }
-        else if((n.getLeft() == null) && (n.getRight()==null)){
-            return 1;
-        }
-        else{
-            return countLeaves(n.getLeft())+countLeaves(n.getRight());
-        }
-    }
     
     public boolean isFull(){
         return isFull(root);
@@ -260,29 +207,18 @@ public class BinaryTree<E> {
         }
         return isFull(n.getLeft()) && isFull(n.getRight()) && height(n.getLeft())== height(n.getRight());
     }
+    public int height(){
+        return height(root);
+    }
     
-    public String decision(List<String> respuestas){     
-        Iterator<String> it = respuestas.iterator();
-        return  decision(it, (Nodo<String>)root);
+    private int height(Nodo<E> n){
+        if(n==null)
+            return 0;
+        return 1 +  Math.max(height(n.getLeft()), height(n.getRight()));
+        
     }
-    private String decision(Iterator<String> it, Nodo<String> parent){
-//        boolean tiene=it.hasNext();
-        String valor = (it.hasNext())? it.next() : null;
-        boolean va=valor!=null;
-        boolean derecha = (valor!=null)? (valor.toLowerCase().equals("yes")) : false;
-        if(parent == null || valor==null){
-            return "INCERTIDUMBRE";
-        }
-        else if(derecha && parent.getRight().isHoja()){
-            return parent.getRight().getData();
-        }
-        else if(!derecha && parent.getLeft().isHoja()){
-            return parent.getLeft().getData();
-        }
-        else{
-            return (derecha)? decision(it, parent.getRight()): decision(it, parent.getLeft());
-        }
-    }
+    
+   
     
     public boolean addMorse(E child, List<String> direcciones){
         this.root = (this.root == null)? (Nodo<E>)(new Nodo<>("INICIO")) : this.root;

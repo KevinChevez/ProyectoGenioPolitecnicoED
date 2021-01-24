@@ -16,6 +16,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import static proyecto.controlador.Aplicacion.arbolPreguntas;
+//import static proyecto.controlador.JuegoControlador.nodoActual;
 
 
 /**
@@ -42,6 +43,7 @@ public class LoseControlador  implements Initializable{
     
     private String pregunta;
     private String animalNuevo;
+
     
 
     /**

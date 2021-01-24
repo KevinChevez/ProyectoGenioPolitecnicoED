@@ -38,9 +38,7 @@ public class Aplicacion extends Application {
             primaryStage.show();     
         }catch(IOException e){
             e.getLocalizedMessage();
-//            
-//            System.out.println("Hubo un problema "+e.getMessage());
-//            System.exit(0);
+
         }
     }
 
